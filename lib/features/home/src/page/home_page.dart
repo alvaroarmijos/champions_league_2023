@@ -1,6 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:champions_league_2023/features/home/src/bloc.dart';
 import 'package:champions_league_2023/features/home/src/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -8,6 +10,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final bloc = context.read<HomePageBloc>();
     final CarouselController controller = CarouselController();
 
     return Scaffold(
@@ -26,12 +29,15 @@ class HomePage extends StatelessWidget {
               options: CarouselOptions(
                 height: 400,
                 viewportFraction: 0.9,
+                onPageChanged: (index, _) => bloc.onChangeNewsEvent(index),
               ),
             ),
             const SizedBox(
               height: 16,
             ),
-            const Indicator(itemCount: 3, currentIndex: 2)
+            BlocBuilder<HomePageBloc, HomePageState>(builder: (context, state) {
+              return Indicator(itemCount: 3, currentIndex: state.currentIndex);
+            })
           ],
         ),
       ),

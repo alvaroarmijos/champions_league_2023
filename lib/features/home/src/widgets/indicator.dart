@@ -15,7 +15,7 @@ class Indicator extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        for (var i = 0; i <= itemCount; i++)
+        for (var i = 0; i < itemCount; i++)
           AnimatedContainer(
             margin: const EdgeInsets.symmetric(horizontal: 4),
             duration: const Duration(milliseconds: 300),
