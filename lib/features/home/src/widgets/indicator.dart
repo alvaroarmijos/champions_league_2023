@@ -21,7 +21,9 @@ class Indicator extends StatelessWidget {
             duration: const Duration(milliseconds: 300),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(4),
-              color: i == currentIndex ? Colors.deepPurple : Colors.grey[400],
+              color: i == currentIndex
+                  ? Theme.of(context).colorScheme.onPrimary
+                  : Colors.grey[400],
             ),
             width: i == currentIndex ? 24 : 12,
             height: 6,
