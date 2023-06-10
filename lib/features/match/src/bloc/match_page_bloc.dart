@@ -6,21 +6,9 @@ import '../../../../data/feed/infrastructure.dart';
 abstract class MacthPageEvent {}
 
 class MacthPageState {
-  final int currentIndex;
-
-  MacthPageState({
-    this.currentIndex = 0,
-  });
+  MacthPageState();
 
   MatchData get matchData => ApiClient.getResult();
-
-  MacthPageState copyWith({
-    int? currentIndex,
-  }) {
-    return MacthPageState(
-      currentIndex: currentIndex ?? this.currentIndex,
-    );
-  }
 }
 
 class MacthPageBloc extends Bloc<MacthPageEvent, MacthPageState> {

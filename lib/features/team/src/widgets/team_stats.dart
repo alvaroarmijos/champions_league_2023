@@ -1,32 +1,27 @@
+import 'package:champions_league_2023/data/feed/domain.dart';
 import 'package:flutter/material.dart';
 
 class TeamStats extends StatelessWidget {
-  const TeamStats({super.key});
+  const TeamStats({
+    super.key,
+    required this.stats,
+  });
+
+  final List<TeamStat> stats;
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(16),
+    return Padding(
+      padding: const EdgeInsets.all(16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          StatItem(
-            label: "Total",
-            value: 22,
-            important: true,
-          ),
-          StatItem(
-            label: "Won",
-            value: 18,
-          ),
-          StatItem(
-            label: "Draw",
-            value: 2,
-          ),
-          StatItem(
-            label: "Lost",
-            value: 1,
-          ),
+          for (var i = 0; i < stats.length; i++)
+            StatItem(
+              label: stats[i].label,
+              value: stats[i].value,
+              important: i == 0,
+            ),
         ],
       ),
     );

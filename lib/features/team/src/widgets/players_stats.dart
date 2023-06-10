@@ -1,35 +1,28 @@
 import 'package:flutter/material.dart';
 
 import '../../../../common/ui/src/res/drawables.dart';
+import '../../../../data/feed/domain.dart';
 
 class PlayersStats extends StatelessWidget {
-  const PlayersStats({super.key});
+  const PlayersStats({
+    super.key,
+    required this.players,
+  });
+
+  final List<MostPlayer> players;
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(16),
+    return Padding(
+      padding: const EdgeInsets.all(16),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          PlayerStats(
-            label: "Most Goals",
-            name: "Erling",
-            lastName: "Haaland",
-            number: "9",
-            image:
-                "https://resources.premierleague.com/premierleague/photos/players/250x250/p223094.png",
-            left: true,
-          ),
-          PlayerStats(
-            label: "Most Assists",
-            name: "Kevin",
-            lastName: "de Bryne",
-            number: "17",
-            image:
-                "https://resources.premierleague.com/premierleague/photos/players/250x250/p61366.png",
-            left: false,
-          ),
+          for (var i = 0; i < players.length; i++)
+            PlayerStats(
+              mostPlayer: players[i],
+              left: i == 0,
+            ),
         ],
       ),
     );
@@ -39,19 +32,11 @@ class PlayersStats extends StatelessWidget {
 class PlayerStats extends StatelessWidget {
   const PlayerStats({
     super.key,
-    required this.label,
-    required this.name,
-    required this.lastName,
-    required this.image,
-    required this.number,
+    required this.mostPlayer,
     required this.left,
   });
 
-  final String label;
-  final String name;
-  final String lastName;
-  final String image;
-  final String number;
+  final MostPlayer mostPlayer;
   final bool left;
 
   @override
@@ -68,7 +53,7 @@ class PlayerStats extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Text(
-                label.toUpperCase(),
+                mostPlayer.label.toUpperCase(),
                 style: theme.textTheme.titleMedium
                     ?.copyWith(fontWeight: FontWeight.bold),
               ),
@@ -98,21 +83,21 @@ class PlayerStats extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          number,
-                          style: theme.textTheme.headlineMedium?.copyWith(
+                          mostPlayer.number,
+                          style: theme.textTheme.headlineLarge?.copyWith(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         RichText(
                           text: TextSpan(
-                              text: "$name ",
+                              text: "${mostPlayer.name} ",
                               style: theme.textTheme.titleLarge?.copyWith(
                                 color: Colors.white,
                               ),
                               children: [
                                 TextSpan(
-                                  text: lastName,
+                                  text: mostPlayer.lastName,
                                   style:
                                       theme.textTheme.headlineMedium?.copyWith(
                                     color: Colors.white,
@@ -134,7 +119,7 @@ class PlayerStats extends StatelessWidget {
             child: Align(
               alignment: left ? Alignment.bottomLeft : Alignment.bottomRight,
               child: Image.network(
-                image,
+                mostPlayer.image,
                 height: 180,
               ),
             ),

@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../../../../data/feed/domain.dart';
+
 class RecentForm extends StatelessWidget {
-  const RecentForm({super.key});
+  const RecentForm({
+    super.key,
+    required this.recentForms,
+  });
+
+  final List<TeamForm> recentForms;
 
   @override
   Widget build(BuildContext context) {
@@ -21,29 +28,13 @@ class RecentForm extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              FormItem(
-                label: "W",
-                color: Colors.green,
-              ),
-              FormItem(
-                label: "W",
-                color: Colors.green,
-              ),
-              FormItem(
-                label: "W",
-                color: Colors.green,
-              ),
-              FormItem(
-                label: "L",
-                color: Colors.red,
-              ),
-              FormItem(
-                label: "D",
-                color: Colors.grey,
-              ),
+              for (var i = 0; i < recentForms.length; i++)
+                FormItem(
+                  form: recentForms[i],
+                ),
             ],
           )
         ],
@@ -55,15 +46,19 @@ class RecentForm extends StatelessWidget {
 class FormItem extends StatelessWidget {
   const FormItem({
     super.key,
-    required this.label,
-    required this.color,
+    required this.form,
   });
 
-  final String label;
-  final Color color;
+  final TeamForm form;
 
   @override
   Widget build(BuildContext context) {
+    final (color, label) = switch (form) {
+      TeamForm.win => (Colors.green, "D"),
+      TeamForm.lost => (Colors.red, "L"),
+      TeamForm.draw => (Colors.grey, "D"),
+    };
+
     return Container(
       height: 60,
       width: 60,
