@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:champions_league_2023/data/feed/infrastructure/api_client.dart';
+import 'package:champions_league_2023/data/feed/infrastructure.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../data/feed/domain.dart';

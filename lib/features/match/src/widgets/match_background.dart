@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
 class Matchbackground extends StatelessWidget {
-  const Matchbackground({super.key});
+  const Matchbackground({
+    super.key,
+    required this.imageCover,
+  });
+
+  final String imageCover;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +20,7 @@ class Matchbackground extends StatelessWidget {
         alignment: Alignment.center,
         children: [
           Image.network(
-            "https://images2.minutemediacdn.com/image/upload/c_crop,w_3891,h_2188,x_0,y_136/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/images/GettyImages/mmsport/90min_es_international_web/01grdw5ve2px38t9crp7.jpg",
+            imageCover,
             colorBlendMode: BlendMode.darken,
             color: theme.colorScheme.primary.withOpacity(0.7),
             fit: BoxFit.cover,

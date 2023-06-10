@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:champions_league_2023/app/cl_app.dart';
 import 'package:champions_league_2023/common/ui/src/res/cl_theme.dart';
 import 'package:champions_league_2023/features/home/src/bloc.dart';
+import 'package:champions_league_2023/features/match/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         Provider<HomePageBloc>(create: (_) => HomePageBloc()),
+        Provider<MacthPageBloc>(create: (_) => MacthPageBloc()),
       ],
       child: MaterialApp(
         title: 'Material App',

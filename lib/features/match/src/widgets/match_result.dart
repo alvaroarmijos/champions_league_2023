@@ -1,9 +1,19 @@
+import 'package:champions_league_2023/data/feed/domain.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../common/ui/src/res/drawables.dart';
 
 const heightImage = 96.0;
 
 class MatchResult extends StatelessWidget {
-  const MatchResult({super.key});
+  const MatchResult({
+    super.key,
+    required this.finalScore,
+    required this.goals,
+  });
+
+  final FinalScore finalScore;
+  final List<String> goals;
 
   @override
   Widget build(BuildContext context) {
@@ -32,18 +42,28 @@ class MatchResult extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Image.network(
-                    "https://logodownload.org/wp-content/uploads/2017/02/manchester-city-fc-logo-escudo-badge-1.png",
+                    finalScore.imgLocal,
                     height: heightImage,
                   ),
                   const SizedBox(
                     height: 16,
                   ),
-                  Text(
-                    "MCI",
-                    style: theme.textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  )
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        Icons.circle,
+                        color: theme.colorScheme.onPrimary,
+                        size: 16,
+                      ),
+                      Text(
+                        finalScore.local,
+                        style: theme.textTheme.titleMedium?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
               Container(
@@ -54,7 +74,7 @@ class MatchResult extends StatelessWidget {
                   color: theme.colorScheme.primary,
                 ),
                 child: Text(
-                  "1 - 0",
+                  finalScore.score,
                   style: theme.textTheme.titleMedium?.copyWith(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -66,21 +86,66 @@ class MatchResult extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Image.network(
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/FC_Internazionale_Milano_2021.svg/1200px-FC_Internazionale_Milano_2021.svg.png",
+                    finalScore.imgVisit,
                     height: heightImage,
                   ),
                   const SizedBox(
                     height: 16,
                   ),
-                  Text(
-                    "INT",
-                    style: theme.textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        Icons.circle,
+                        color: theme.colorScheme.primary,
+                        size: 16,
+                      ),
+                      Text(
+                        finalScore.visit,
+                        style: theme.textTheme.titleMedium?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   )
                 ],
               ),
             ],
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          for (var i = 0; i < goals.length; i++) GoalData(goal: goals[i])
+        ],
+      ),
+    );
+  }
+}
+
+class GoalData extends StatelessWidget {
+  const GoalData({
+    super.key,
+    required this.goal,
+  });
+
+  final String goal;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 16),
+      child: Row(
+        children: [
+          Text(
+            goal,
+          ),
+          const SizedBox(
+            width: 4,
+          ),
+          Image.asset(
+            CLDrawables.getCLLogo(),
+            height: 16,
+            color: Theme.of(context).colorScheme.onPrimary,
           )
         ],
       ),
