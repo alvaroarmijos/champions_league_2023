@@ -1,3 +1,4 @@
+import 'package:champions_league_2023/app/app_navigator.dart';
 import 'package:champions_league_2023/data/feed/domain.dart';
 import 'package:flutter/material.dart';
 
@@ -38,33 +39,36 @@ class MatchResult extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Image.network(
-                    finalScore.imgLocal,
-                    height: heightImage,
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(
-                        Icons.circle,
-                        color: theme.colorScheme.onPrimary,
-                        size: 16,
-                      ),
-                      Text(
-                        finalScore.local,
-                        style: theme.textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.bold,
+              GestureDetector(
+                onTap: () => AppNavigator.navigateToTeamDetail(context),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Image.network(
+                      finalScore.imgLocal,
+                      height: heightImage,
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.circle,
+                          color: theme.colorScheme.onPrimary,
+                          size: 16,
                         ),
-                      ),
-                    ],
-                  ),
-                ],
+                        Text(
+                          finalScore.local,
+                          style: theme.textTheme.titleMedium?.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
               Container(
                 margin: const EdgeInsets.only(bottom: 40),

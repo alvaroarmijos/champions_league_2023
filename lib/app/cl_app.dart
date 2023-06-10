@@ -1,6 +1,9 @@
 import 'package:champions_league_2023/features/home/src/page.dart';
+import 'package:champions_league_2023/features/match/bloc.dart';
 import 'package:champions_league_2023/features/match/page.dart';
+import 'package:champions_league_2023/features/team/page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'app_navigator.dart';
 
@@ -31,7 +34,14 @@ class CLApp extends StatelessWidget {
         );
       case AppNavigator.ROUTE_MACTH_DETAIL:
         return MaterialPageRoute(
-            settings: settings, builder: (context) => const MatchPage());
+            settings: settings,
+            builder: (context) => BlocProvider(
+                  create: (_) => MacthPageBloc(),
+                  child: const MatchPage(),
+                ));
+      case AppNavigator.ROUTE_TEAM_DETAIL:
+        return MaterialPageRoute(
+            settings: settings, builder: (context) => const TeamPage());
       default:
         return MaterialPageRoute(
           settings: settings,
