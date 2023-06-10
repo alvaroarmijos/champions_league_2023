@@ -1,16 +1,16 @@
 import 'package:champions_league_2023/features/home/src/page.dart';
-import 'package:champions_league_2023/features/match/src/page.dart';
+import 'package:champions_league_2023/features/match/page.dart';
 import 'package:flutter/material.dart';
 
 import 'app_navigator.dart';
 
-class AppExperience extends StatelessWidget {
-  const AppExperience({super.key});
+final navigatorKey = GlobalKey<NavigatorState>();
+
+class CLApp extends StatelessWidget {
+  const CLApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final navigatorKey = GlobalKey<NavigatorState>();
-
     return WillPopScope(
       child: Navigator(
         key: navigatorKey,

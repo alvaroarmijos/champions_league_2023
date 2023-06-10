@@ -1,8 +1,8 @@
 import 'package:champions_league_2023/common/ui/src/res/drawables.dart';
 import 'package:flutter/material.dart';
 
-class AppBarCL extends StatelessWidget {
-  const AppBarCL({super.key});
+class AppBarHome extends StatelessWidget {
+  const AppBarHome({super.key});
 
   @override
   Widget build(BuildContext context) {
