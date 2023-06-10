@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:champions_league_2023/data/feed/domain/news/news.dart';
 import 'package:flutter/material.dart';
 
@@ -27,11 +29,15 @@ class NewItem extends StatelessWidget {
             )
           ]),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(48),
             child: Image.network(
               news.url.toString(),
+              height: Platform.isIOS ? 270 : 200,
+              width: double.infinity,
+              fit: BoxFit.cover,
             ),
           ),
           ChipDate(

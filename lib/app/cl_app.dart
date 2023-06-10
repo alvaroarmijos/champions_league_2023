@@ -1,4 +1,4 @@
-import 'package:champions_league_2023/features/home/src/page.dart';
+import 'package:champions_league_2023/features/home/page.dart';
 import 'package:champions_league_2023/features/match/bloc.dart';
 import 'package:champions_league_2023/features/match/page.dart';
 import 'package:champions_league_2023/features/team/bloc.dart';

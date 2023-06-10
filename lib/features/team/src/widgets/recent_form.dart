@@ -54,7 +54,7 @@ class FormItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final (color, label) = switch (form) {
-      TeamForm.win => (Colors.green, "D"),
+      TeamForm.win => (Colors.green, "W"),
       TeamForm.lost => (Colors.red, "L"),
       TeamForm.draw => (Colors.grey, "D"),
     };

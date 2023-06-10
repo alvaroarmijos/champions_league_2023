@@ -17,7 +17,7 @@ class FeedLocalDataSourceImpl implements FeedLocalDataSource {
       visit: "INT",
       imgVisit:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/FC_Internazionale_Milano_2021.svg/1200px-FC_Internazionale_Milano_2021.svg.png",
-      result: "0 - 1",
+      result: "1 - 0",
     );
   }
 
@@ -25,25 +25,25 @@ class FeedLocalDataSourceImpl implements FeedLocalDataSource {
   List<News> getNews() {
     return [
       News(
-        title: "Halaand grabs late win for City",
-        date: "March 03, 2023",
+        title: "Man City win first Champions",
+        date: "June 10, 2023",
         chip: "MW 22",
         url: Uri.parse(
-            "https://www.newsletter.co.uk/webimg/b25lY21zOjVjZTBmYjczLTk5ZGItNGI0MS05NDU1LTc2NWRmNjkxNjU0ODpmODBlY2E2ZC1hNTBkLTQ3YTMtOWI1Yy04MmU4ZTVlMDhkZmE=.jpg"),
+            "https://editorial.uefa.com//resources/0282-1839ba745d1d-e0d27ca2f9fb-1000/format/free1/fbl-eur-c1-man_city-inter.jpeg?imwidth=2048"),
       ),
       News(
-        title: "Halaand grabs late win for City",
-        date: "March 03, 2023",
+        title: "Man City vs Inter line-ups",
+        date: "June 10, 2023",
         chip: "MW 22",
         url: Uri.parse(
-            "https://www.newsletter.co.uk/webimg/b25lY21zOjVjZTBmYjczLTk5ZGItNGI0MS05NDU1LTc2NWRmNjkxNjU0ODpmODBlY2E2ZC1hNTBkLTQ3YTMtOWI1Yy04MmU4ZTVlMDhkZmE=.jpg"),
+            "https://assets-webp.khelnow.com/news/uploads/2023/06/Lead-Pic_9-June_Man-City-vs-Inter.jpg.webp"),
       ),
       News(
-        title: "Halaand grabs late win for City",
-        date: "March 03, 2023",
+        title: "Champions League final referee",
+        date: "June 10, 2023",
         chip: "MW 22",
         url: Uri.parse(
-            "https://www.newsletter.co.uk/webimg/b25lY21zOjVjZTBmYjczLTk5ZGItNGI0MS05NDU1LTc2NWRmNjkxNjU0ODpmODBlY2E2ZC1hNTBkLTQ3YTMtOWI1Yy04MmU4ZTVlMDhkZmE=.jpg"),
+            "https://talksport.com/wp-content/uploads/sites/5/2023/06/referee-szymon-marciniak-gestures-uefa-822191005.jpg"),
       ),
     ];
   }
@@ -63,34 +63,35 @@ class FeedLocalDataSourceImpl implements FeedLocalDataSource {
             "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/FC_Internazionale_Milano_2021.svg/1200px-FC_Internazionale_Milano_2021.svg.png",
       ),
       goals: [
-        "Julián Álvarez '80",
+        "Rodri '68",
       ],
       manOfTheMacth: ManOfTheMacth(
-        name: "İlkay",
-        lastName: "Gündoğan",
-        shots: 4,
-        assits: 1,
-        infl: 6.7,
+        name: "",
+        lastName: "Rodri",
+        goals: 1,
+        assits: 0,
+        infl: 8.7,
         dcPlayer: 12,
         dcAvg: 10,
-        number: "8",
-        image: "https://www.footyrenders.com/render/ilkay-gundogan-30.png",
+        number: "16",
+        image:
+            "https://uniqrenders.com/Uploads/25-3-2023/2148/rodri-manchester-city-premier-league-spain-spanish-footballers-uniqrenders.com.png",
       ),
       stats: [
         Stat(
           "POSSESSION(%)",
-          68,
-          32,
+          58,
+          42,
         ),
         Stat(
-          "SHOTS",
-          16,
-          6,
+          "Total attempts",
+          7,
+          14,
         ),
         Stat(
-          "ON TARGET",
-          8,
-          2,
+          "Saves",
+          5,
+          3,
         ),
       ],
     );
@@ -105,31 +106,31 @@ class FeedLocalDataSourceImpl implements FeedLocalDataSource {
       stadium:
           "https://lh3.googleusercontent.com/TPU-d2OsLC9odQJ5FRJWAbv5t4PsD8v1wMgq1bGg6FBL-0o3YyjNlpSL856hGKIgm15JfdYhxyfj8TIgnobZv0tGxQ=w640-h400-e365-rj-sc0x00ffffff",
       stats: [
-        TeamStat("Total", 22),
-        TeamStat("Won", 18),
-        TeamStat("Draw", 2),
-        TeamStat("Lost", 1),
+        TeamStat("Total", 12),
+        TeamStat("Won", 7),
+        TeamStat("Draw", 5),
+        TeamStat("Lost", 0),
       ],
       recentForms: [
         TeamForm.win,
-        TeamForm.win,
-        TeamForm.win,
-        TeamForm.lost,
         TeamForm.draw,
+        TeamForm.draw,
+        TeamForm.win,
+        TeamForm.win,
       ],
       players: [
         MostPlayer(
             "Erling",
-            "Halaand",
+            "Haaland",
             "Most Goals",
             "https://resources.premierleague.com/premierleague/photos/players/250x250/p223094.png",
-            "9"),
+            "12"),
         MostPlayer(
             "Kevin",
-            "de Bryne",
+            "De Bruyne",
             "Most Assists",
             "https://resources.premierleague.com/premierleague/photos/players/250x250/p61366.png",
-            "17")
+            "7")
       ],
     );
   }

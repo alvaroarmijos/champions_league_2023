@@ -1,3 +1,3 @@
 library bloc;
 
-export '../match/src/bloc/match_page_bloc.dart';
+export 'src/bloc/match_page_bloc.dart';

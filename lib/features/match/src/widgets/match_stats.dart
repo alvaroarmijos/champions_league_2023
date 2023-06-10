@@ -82,7 +82,7 @@ class _StatWidgetState extends State<StatWidget> {
     return Column(
       children: [
         Text(
-          widget.label,
+          widget.label.toUpperCase(),
           style: theme.textTheme.bodySmall?.copyWith(
             fontWeight: FontWeight.bold,
             color: theme.colorScheme.onSecondary,

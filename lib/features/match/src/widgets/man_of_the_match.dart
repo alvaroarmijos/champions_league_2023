@@ -41,7 +41,7 @@ class ManOfTheMatch extends StatelessWidget {
                 ),
                 Positioned(
                   top: 0,
-                  right: -460,
+                  right: -200,
                   child: Transform(
                     transform: Matrix4.rotationY(3.14),
                     child: Image.network(
@@ -86,8 +86,8 @@ class ManOfTheMatch extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Statistics(
-                              label: "SHOTS",
-                              data: manOfTheMacth.shots.toString()),
+                              label: "GOALS",
+                              data: manOfTheMacth.goals.toString()),
                           Statistics(
                               label: "ASSISTS",
                               data: manOfTheMacth.assits.toString()),
@@ -109,7 +109,7 @@ class ManOfTheMatch extends StatelessWidget {
                         height: 8,
                       ),
                       DistanceCovered(
-                        label: "Gündoğan",
+                        label: manOfTheMacth.lastName.toUpperCase(),
                         value: manOfTheMacth.dcPlayer,
                         color: Colors.green,
                         width: 200,

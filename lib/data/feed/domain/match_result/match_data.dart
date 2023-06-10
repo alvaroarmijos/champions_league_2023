@@ -33,7 +33,7 @@ class FinalScore {
 class ManOfTheMacth {
   final String name;
   final String lastName;
-  final int shots;
+  final int goals;
   final int assits;
   final double infl;
   final int dcPlayer;
@@ -44,7 +44,7 @@ class ManOfTheMacth {
   ManOfTheMacth({
     required this.name,
     required this.lastName,
-    required this.shots,
+    required this.goals,
     required this.assits,
     required this.infl,
     required this.dcPlayer,
