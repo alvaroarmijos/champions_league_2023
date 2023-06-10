@@ -2,6 +2,12 @@
 
 The Champions League Football App is a Flutter mobile application that provides users with access to the latest football matches, results, and statistics of teams participating in the Champions League.
 
+<p>
+    <img src="./docs/app1.png" width="200"/ hspace="5"> 
+    <img src="./docs/app2.png" width="200"/ hspace="5">
+   <img src="./docs/app3.png" width="200"/ hspace="5">
+</p>
+
 ## Features
 
 - **Match Results**
