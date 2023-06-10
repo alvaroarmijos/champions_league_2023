@@ -8,7 +8,8 @@ abstract class TeamPageEvent {}
 class TeamPageState {
   TeamPageState();
 
-  Team get team => ApiClient.getTeam();
+  //This ApiClient must be with DI
+  Team get team => ApiClient().getTeam();
 }
 
 class TeamPageBloc extends Bloc<TeamPageEvent, TeamPageState> {

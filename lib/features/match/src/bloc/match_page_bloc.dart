@@ -8,7 +8,8 @@ abstract class MacthPageEvent {}
 class MacthPageState {
   MacthPageState();
 
-  MatchData get matchData => ApiClient.getResult();
+  //This ApiClient must be with DI
+  MatchData get matchData => ApiClient().getResult();
 }
 
 class MacthPageBloc extends Bloc<MacthPageEvent, MacthPageState> {

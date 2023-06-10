@@ -7,9 +7,10 @@ class HomePageState {
     this.currentIndex = 0,
   });
 
-  List<News> get news => ApiClient.getNews();
+  //This ApiClient must be with DI
+  List<News> get news => ApiClient().getNews();
 
-  MatchResult get latestResult => ApiClient.getLatestResult();
+  MatchResult get latestResult => ApiClient().getLatestResult();
 
   HomePageState copyWith({
     int? currentIndex,
