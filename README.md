@@ -6,6 +6,7 @@ The Champions League Football App is a Flutter mobile application that provides 
     <img src="./docs/app1.png" width="200"/ hspace="5"> 
     <img src="./docs/app2.png" width="200"/ hspace="5">
    <img src="./docs/app3.png" width="200"/ hspace="5">
+   <img src="./docs/app4.png" width="200"/ hspace="5">
 </p>
 
 ## Features
