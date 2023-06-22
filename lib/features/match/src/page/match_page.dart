@@ -9,7 +9,7 @@ class MatchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bloc = context.read<MacthPageBloc>();
+    final bloc = context.read<MacthPageBloc>()..onInitLiveActivitiesEvent();
 
     return Scaffold(
       body: Stack(
